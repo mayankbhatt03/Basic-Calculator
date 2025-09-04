@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calculator">
+    <div class="brand"><span class="dot"></span> Simple Calculator</div>
+
+    <section class="display">
+      <div class="prev" id="prev"></div>
+      <div class="curr" id="curr">0</div>
+    </section>
+
+    <section class="keys">
+      <button class="danger" data-action="clear">AC</button>
+      <button data-action="delete">DEL</button>
+      <button class="op" data-action="percent">%</button>
+      <button class="op" data-action="operator" data-operator="/">÷</button>
+
+      <button data-action="digit" data-digit="7">7</button>
+      <button data-action="digit" data-digit="8">8</button>
+      <button data-action="digit" data-digit="9">9</button>
+      <button class="op" data-action="operator" data-operator="*">×</button>
+
+      <button data-action="digit" data-digit="4">4</button>
+      <button data-action="digit" data-digit="5">5</button>
+      <button data-action="digit" data-digit="6">6</button>
+      <button class="op" data-action="operator" data-operator="-">−</button>
+
+      <button data-action="digit" data-digit="1">1</button>
+      <button data-action="digit" data-digit="2">2</button>
+      <button data-action="digit" data-digit="3">3</button>
+      <button class="op" data-action="operator" data-operator="+">+</button>
+
+      <button data-action="digit" data-digit="0" class="span-2">0</button>
+      <button data-action="decimal">.</button>
+
+      <button class="equals span-2" data-action="equals">=</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

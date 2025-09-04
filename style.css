@@ -1,0 +1,109 @@
+:root {
+  --bg: #0f1220;
+  --panel: #151a2d;
+  --btn: #1d2440;
+  --btn-alt: #2a335a;
+  --accent: #5b8cff;
+  --text: #e7ecff;
+  --muted: #9aa4c7;
+  --danger: #ff6b6b;
+  --radius: 18px;
+  --shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, Roboto, Arial, sans-serif;
+  background: radial-gradient(1000px 600px at 20% 10%, #1a2040 0%, var(--bg) 60%),
+              radial-gradient(800px 500px at 80% 90%, #12162b 0%, var(--bg) 60%), var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: min(360px, 92vw);
+  background: linear-gradient(180deg, #181e36 0%, var(--panel) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.brand {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: .8;
+}
+.brand .dot {
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.display {
+  background: #0c1022;
+  color: var(--text);
+  border-radius: 14px;
+  padding: 16px 14px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  min-height: 72px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+}
+.display .prev {
+  font-size: 14px;
+  color: var(--muted);
+}
+.display .curr {
+  font-size: clamp(24px, 6vw, 34px);
+  line-height: 1.2;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 16px 0;
+  background: var(--btn);
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+  transition: transform .06s ease, filter .2s ease;
+}
+button:active { transform: translateY(1px) scale(.996); }
+button:hover { filter: brightness(1.05); }
+
+.op { background: var(--btn-alt); }
+.equals { background: linear-gradient(180deg, var(--accent), #3a63d6); }
+.danger { background: linear-gradient(180deg, #ff7b7b, #ff5252); }
+
+.span-2 { grid-column: span 2; }
+
+.hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  opacity: .9;
+}
